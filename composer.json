@@ -1,0 +1,41 @@
+{
+    "name": "koop1214/laravel-schedule-report",
+    "description": "Laravel schedule report",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Koop\\ScheduleReport\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.4",
+        "ext-json": "*",
+        "ext-redis": "*",
+        "illuminate/support": "^7|^8",
+        "illuminate/console": "^7|^8"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.6",
+        "brainmaestro/composer-git-hooks": "^2.8"
+    },
+    "scripts": {
+        "phpcs": "phpcs --standard=phpcs.xml"
+    },
+    "extra": {
+        "hooks": {
+            "pre-commit": [
+                "php vendor/bin/phpcbf --extensions=php ."
+            ]
+        },
+        "laravel": {
+            "providers": [
+                "Koop\\ScheduleReport\\Providers\\ServiceProvider"
+            ]
+        }
+    }
+}
